@@ -19,7 +19,7 @@ export const App = () => {
     if (currentToken) {
       token.set(currentToken);
     }
-  }, []);
+  }, [currentToken]);
 
   return (
     <div>
