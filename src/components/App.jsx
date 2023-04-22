@@ -1,19 +1,36 @@
-import style from './app.module.scss';
+import { Routes, Route } from 'react-router-dom';
+import { token } from 'redux/operations';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getToken } from 'redux/selectors';
 
-import ContactForm from "./ContactForm/ContactForm";
-import Filter from "./Filter/Filter";
-import ContactList from "./ContactList/ContactList";
-
+import SharedLayout from './SharedLayout/SharedLayout';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PublicRoute from './PublicRoute/PublicRoute';
+import Login from 'pages/Login/Login';
+import Registartion from 'pages/Registration/Registration';
+import Home from 'pages/Home/Home';
+import Contacts from 'pages/Contacts/Contacts';
 
 export const App = () => {
+  const currentToken = useSelector(getToken);
+
+  useEffect(()=> {
+    if (currentToken) {
+      token.set(currentToken);
+    }
+  }, []);
 
   return (
-    <div className={style.container}>
-      <h1 className={style.title}>Phonebook</h1>
-      <ContactForm />
-      <h2 className={style.title}>Contacts</h2>
-      <Filter />
-      <ContactList />
+    <div>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="login" element={<PublicRoute redirectTo='/contacts' restricted component={<Login />} />} />
+          <Route path="registration" element={<PublicRoute redirectTo='/contacts' restricted component={<Registartion />} />} />
+          <Route path="contacts" element={<PrivateRoute redirectTo='/login' component={<Contacts />} />} />
+        </Route>
+      </Routes>
     </div>
   );
-}
+};

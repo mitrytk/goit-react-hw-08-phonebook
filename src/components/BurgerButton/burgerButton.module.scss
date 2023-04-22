@@ -1,0 +1,73 @@
+.button_burger {
+    position: relative;
+    z-index: 6;
+
+    width: 20px;
+    height: 15px;
+
+    padding: 0;
+    background-color: #6c6c6c00;
+    border: none;
+
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        clip: rect(0 0 0 0);
+    }
+
+    & .line_center {
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #6c6c6c;
+
+        &.hide {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            clip: rect(0 0 0 0);
+        }
+    }
+
+    & .line_top {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #6c6c6c;
+        transition: 0.1s;
+
+        &.rotate_left {
+            transform: translate(-4px, 6.5px) rotate(45deg);
+            width: 27px;
+        }
+    }
+
+    & .line_bottom {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #6c6c6c;
+        transition: 0.1s;
+
+        &.rotate_right {
+            transform: translate(-4px, -6.5px) rotate(-45deg);
+            width: 27px;
+        }
+    }
+}

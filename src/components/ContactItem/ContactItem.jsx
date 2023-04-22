@@ -16,7 +16,7 @@ const ContactItem = ({ contact }) => {
   };
 
   return (
-    <li key={contact.id} className={style.item}>
+    <li key={contact.id} className={style.item} id={contact.id}>
       <div className={style.itemLoader}>
         <RotatingLines
           strokeColor="white"
@@ -27,7 +27,7 @@ const ContactItem = ({ contact }) => {
         />
       </div>
       <p className={style.contactName}>{contact.name}: </p>
-      <p className={style.contactNumber}>{contact.phone}</p>
+      <p className={style.contactNumber}>{contact.number}</p>
       {isLoadingItem || (
         <button
           className={style.button}
