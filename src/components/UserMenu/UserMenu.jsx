@@ -12,7 +12,9 @@ const UserMenu = () => {
   };
   return (
     <div className={style.container}>
-      <p className={style.mail}>{`user: ${userName}`}</p>
+      <p className={style.mail}>
+        <span>{'user: '}</span>
+        {userName}</p>
       <button onClick={e => handleClick(e)} className={style.login_Button}>
         Logout
       </button>

@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    align-items: baseline;
+
+    @media screen and (max-width: 767.98px) {
+        position: absolute;
+        bottom: 10px;
+    }
+
+    & span {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.login_button {
+    display: block;
+    text-decoration: none;
+    padding: 3px 7px;
+    background: #ffffff;
+    border: 1px solid #4b48db;
+    border-radius: 20px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #4b48db;
+
+    transition: 0.1s;
+
+    &:hover {
+        transform: scale(1.06);
+    }
+}
+
+.reg_button {
+    display: block;
+    text-decoration: none;
+    padding: 3px 7px;
+
+    background: #4b48db;
+    border: 1px solid #4b48db;
+    border-radius: 20px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+
+
+    color: #ffffff;
+    transition: 0.1s;
+
+    &:hover {
+        transform: scale(1.06);
+    }
+}

@@ -8,9 +8,25 @@
 
 .link {
     text-decoration: none;
+    font-family: 'Manrope';
+    font-weight: 700;
+
+    color: #111321;
 
     @media screen and (max-width: 767.98px) {
         font-size: 30px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279.89px) {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0 4px 8px 4px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 18px;
+        line-height: 25px;
+        padding-bottom: 5px;
     }
 }
 
@@ -20,6 +36,6 @@
     }
 
     @media screen and (min-width: 768px) {
-        margin-left: 10px;
+        margin-left: 44px;
     }
 }

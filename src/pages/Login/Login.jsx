@@ -38,8 +38,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login to your account</h1>
+    <div className={style.container}>
+      <h1 className={style.title}>Login to your account</h1>
       <form onSubmit={evt => handleSubmit(evt)} className={style.form}>
         <label className={style.label}>
           Mail
@@ -61,15 +61,15 @@ const Login = () => {
             onChange={evt => handleChange(evt)}
           />
         </label>
-        <button className={style.button} type="submit">
-          Submit
-        </button>
         <div className={style.registration_message}>
           <p>Don't have an account yet?</p>
           <Link className={style.registration_link} to="/registration">
             Registration
           </Link>
         </div>
+        <button className={style.button} type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

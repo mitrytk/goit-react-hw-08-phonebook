@@ -1,26 +1,113 @@
+.container {
+    color: #111321;
+
+    @media screen and (max-width: 767px) {
+        padding-top: 32px;
+        padding-right: 16px;
+        padding-bottom: 28px;
+        padding-left: 16px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1279.89px) {
+        max-width: 768px;
+        margin: 0 auto;
+        padding-top: 32px;
+        padding-right: 16px;
+        padding-bottom: 28px;
+        padding-left: 16px;
+
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 28px;
+        padding-right: 16px;
+        padding-bottom: 28px;
+        padding-left: 16px;
+
+    }
+}
+
+.title {
+    margin-bottom: 20px;
+
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+
+    text-align: center;
+}
+
 .form {
     display: flex;
+    max-width: 400px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 5px 10px;
+
+    margin: 0 auto;
+    padding: 40px 40px 20px;
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.01em;
 }
 
 .label {
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     flex-direction: column;
+    width: 100%;
     margin-bottom: 10px;
 }
 
+.label+.label {
+    margin-top: 10px;
+
+}
+
 .input {
-    width: 200px;
+    display: block;
+    padding: 3px 7px;
+    background: #ffffff;
+    border: 1px solid #A8A8A8;
+    border-radius: 3px;
+    width: 100%;
     margin-top: 3px;
 }
 
-.button {}
+.button {
+    display: block;
+    margin: 0 auto;
+
+    padding: 5px 14px;
+    margin-top: 28px;
+
+    background: #4b48db;
+    border: 1px solid #4b48db;
+    border-radius: 3px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
 
 .registration_message {
     display: flex;
     align-items: baseline;
+
+    font-size: 12px;
+
+    color: #111321ab;
 }
 
 .registration_link {

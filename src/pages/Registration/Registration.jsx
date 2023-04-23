@@ -42,7 +42,9 @@ const Registartion = () => {
   };
 
   return (
-    <div>
+    <div className={style.container}>
+      <h1 className={style.title}>
+Register your account</h1>
       <form onSubmit={evt => handleSubmit(evt)} className={style.form}>
         <label className={style.label}>
           Name
