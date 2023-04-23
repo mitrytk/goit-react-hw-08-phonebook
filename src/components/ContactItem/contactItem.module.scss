@@ -1,19 +1,27 @@
 .item {
     display: flex;
     align-items: baseline;
+
     position: relative;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.104);
     padding: 10px 15px;
-    border-radius: 5px;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.241);
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #111321;
+
+    @media screen and (max-width: 499.89px) {
+        flex-direction: column;
     }
 }
 
-.item+.item {
-    margin-top: 10px;
+.item:nth-child(2n) {
+    background-color: rgba(214, 214, 214, 0);
+
 }
 
 .itemLoader {
@@ -28,16 +36,32 @@
 .button {
     position: absolute;
     right: 10px;
-    width: 50px;
-    height: 20px;
+
+    padding: 3px 10px;
     font-size: 12px;
-    border-radius: 6px;
-    border: 1px solid rgb(86, 86, 86);
-    background-color: rgba(202, 25, 25, 0.779);
-    color: white;
+    border-radius: 10px;
+    border: 0.6px solid rgba(202, 25, 25, 0.779);
+    background-color: #fff;
+    color: rgba(202, 25, 25, 0.779);
+
+    font-weight: 200;
 }
 
 .contactName {
     margin-right: 10px;
     font-weight: 500;
+
+    @media screen and (min-width: 500px) {
+        width: 200px;
+    }
+}
+
+.contactNumber {
+
+    & span {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
 }

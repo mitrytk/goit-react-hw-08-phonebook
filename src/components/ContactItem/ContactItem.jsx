@@ -26,8 +26,12 @@ const ContactItem = ({ contact }) => {
           visible={isLoadingItem}
         />
       </div>
-      <p className={style.contactName}>{contact.name}: </p>
-      <p className={style.contactNumber}>{contact.number}</p>
+      <p className={style.contactName}>{contact.name}</p>
+      <p className={style.contactNumber}>
+        {' '}
+        <span>tel.</span>
+        {contact.number}
+      </p>
       {isLoadingItem || (
         <button
           className={style.button}
@@ -43,7 +47,7 @@ const ContactItem = ({ contact }) => {
 };
 
 ContactItem.propTypes = {
-    contact: PropTypes.object,
-}
+  contact: PropTypes.object,
+};
 
 export default ContactItem;

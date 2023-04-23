@@ -11,7 +11,7 @@ const Registartion = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    dispatch(register({name, email, password}))
+    dispatch(register({ name, email, password }));
 
     reset();
   };
@@ -44,7 +44,8 @@ const Registartion = () => {
   return (
     <div className={style.container}>
       <h1 className={style.title}>
-Register your account</h1>
+        Sign up to own <br /> your contact list
+      </h1>
       <form onSubmit={evt => handleSubmit(evt)} className={style.form}>
         <label className={style.label}>
           Name
@@ -77,7 +78,7 @@ Register your account</h1>
           />
         </label>
         <button className={style.button} type="submit">
-          Submit
+          Sign Up
         </button>
       </form>
     </div>
