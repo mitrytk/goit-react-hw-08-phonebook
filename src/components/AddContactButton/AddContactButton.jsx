@@ -1,4 +1,6 @@
 import style from './addContactButton.module.scss';
+import PropTypes from 'prop-types';
+
 import { ReactComponent as AddIcon } from '../../img/addIcon.svg';
 
 const AddContactButton = ({ toggleModal }) => {
@@ -13,6 +15,10 @@ const AddContactButton = ({ toggleModal }) => {
       New contact
     </button>
   );
+};
+
+AddContactButton.propTypes = {
+  toggleModal: PropTypes.func,
 };
 
 export default AddContactButton;

@@ -21,8 +21,11 @@ const SharedLayout = () => {
 
   const blockScroll = () => {
     const bodyEl = document.querySelector('body');
-    bodyEl.classList.toggle('block_scroll');
-  }
+    const displayWith = window.innerWidth;
+    if (displayWith === 767) {
+      bodyEl.classList.toggle('block_scroll');
+    }
+  };
 
   return (
     <>

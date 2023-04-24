@@ -32,6 +32,7 @@ export const authSlice = createSlice({
       state.isLoggedIn = false;
     },
     [logOut.rejected](state) {
+      state.isLoggedIn = false;
       return state;
     },
     [login.pending](state, { payload }) {

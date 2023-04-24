@@ -15,7 +15,7 @@ import Contacts from 'pages/Contacts/Contacts';
 export const App = () => {
   const currentToken = useSelector(getToken);
 
-  useEffect(()=> {
+  useEffect(() => {
     if (currentToken) {
       token.set(currentToken);
     }
@@ -26,9 +26,32 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
-          <Route path="login" element={<PublicRoute redirectTo='/contacts' restricted component={<Login />} />} />
-          <Route path="registration" element={<PublicRoute redirectTo='/contacts' restricted component={<Registartion />} />} />
-          <Route path="contacts" element={<PrivateRoute redirectTo='/login' component={<Contacts />} />} />
+          <Route
+            path="login"
+            element={
+              <PublicRoute
+                redirectTo="/contacts"
+                restricted
+                component={<Login />}
+              />
+            }
+          />
+          <Route
+            path="registration"
+            element={
+              <PublicRoute
+                redirectTo="/contacts"
+                restricted
+                component={<Registartion />}
+              />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            }
+          />
         </Route>
       </Routes>
     </div>

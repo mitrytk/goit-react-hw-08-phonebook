@@ -1,11 +1,14 @@
 import style from './contactForm.module.scss';
+
+import PropTypes from 'prop-types';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RotatingLines } from 'react-loader-spinner';
+import { ReactComponent as AddIcon } from '../../img/addIcon.svg';
 
-const ContactForm = () => {
+const ContactForm = ({ toggleModal }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const { items, isLoading } = useSelector(getContacts);
@@ -86,9 +89,11 @@ const ContactForm = () => {
           className={style.button}
           type="submit"
           disabled={isLoading === 'addContact'}
+          name="addContact"
+          onClick={e => toggleModal(e)}
         >
           <div className={style.textButton}>
-            Add contact
+            <AddIcon className={style.icon} />
             <div className={style.buttonLoader}>
               <RotatingLines
                 strokeColor="grey"
@@ -103,6 +108,10 @@ const ContactForm = () => {
       </form>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  toggleModal: PropTypes.func,
 };
 
 export default ContactForm;

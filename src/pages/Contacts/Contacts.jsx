@@ -14,7 +14,6 @@ const Contacts = () => {
 
   const toggleModal = e => {
     const buttonName = e.currentTarget.name;
-
     switch (buttonName) {
       case 'addContact':
         setIsAddModalOpen(!isAddModalOpen);
@@ -30,12 +29,11 @@ const Contacts = () => {
   return (
     <div className={style.container}>
       <div className={style.contact_bar}>
-        {/* <h1 className={style.title}>Contact book</h1> */}
-        {isAddModalOpen && <ContactForm />}
         <Filter isFilterModalOpen={isFilterModalOpen} />
         <div className={style.contact_bar_buttons}>
           <FilterButton toggleModal={toggleModal} />
-          <AddContactButton toggleModal={toggleModal} />
+          {isAddModalOpen && <ContactForm toggleModal={toggleModal} />}
+          {!isAddModalOpen && <AddContactButton toggleModal={toggleModal} />}
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 import style from './filter.module.scss';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
 
@@ -25,6 +26,10 @@ const Filter = ({ isFilterModalOpen }) => {
       />
     </label>
   );
+};
+
+Filter.propTypes = {
+  isFilterModalOpen: PropTypes.bool,
 };
 
 export default Filter;
