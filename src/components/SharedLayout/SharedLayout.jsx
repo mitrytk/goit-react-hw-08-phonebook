@@ -22,7 +22,8 @@ const SharedLayout = () => {
   const blockScroll = () => {
     const bodyEl = document.querySelector('body');
     const displayWith = window.innerWidth;
-    if (displayWith === 767) {
+
+    if (displayWith < 768) {
       bodyEl.classList.toggle('block_scroll');
     }
   };
