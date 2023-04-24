@@ -46,6 +46,7 @@ const ContactForm = ({ toggleModal }) => {
       })
     );
     reset();
+    toggleModal(evt);
   };
 
   const reset = () => {
@@ -89,8 +90,6 @@ const ContactForm = ({ toggleModal }) => {
           className={style.button}
           type="submit"
           disabled={isLoading === 'addContact'}
-          name="addContact"
-          onClick={e => toggleModal(e)}
         >
           <div className={style.textButton}>
             <AddIcon className={style.icon} />

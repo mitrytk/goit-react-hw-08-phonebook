@@ -22,7 +22,7 @@ const Contacts = () => {
         setIsFilterModalOpen(!isFilterModalOpen);
         break;
       default:
-        console.log(`no such state`);
+        setIsAddModalOpen(!isAddModalOpen);
     }
   };
 
