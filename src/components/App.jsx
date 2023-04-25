@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { token } from 'redux/operations';
+import { refreshUser } from 'redux/operations';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { getToken } from 'redux/selectors';
+import { useDispatch } from 'react-redux';
 
 import SharedLayout from './SharedLayout/SharedLayout';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -13,13 +12,11 @@ import Home from 'pages/Home/Home';
 import Contacts from 'pages/Contacts/Contacts';
 
 export const App = () => {
-  const currentToken = useSelector(getToken);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (currentToken) {
-      token.set(currentToken);
-    }
-  }, [currentToken]);
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <div>
