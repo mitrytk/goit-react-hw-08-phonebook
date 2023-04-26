@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -18,18 +18,15 @@ import { authSlice } from './authSlice';
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['token'],
 };
 
-const rootReducer = combineReducers({
-  contacts: contactsSlice.reducer,
-  filter: filterSlice.reducer,
-  auth: authSlice.reducer,
-});
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    contacts: contactsSlice.reducer,
+    filter: filterSlice.reducer,
+    auth: persistReducer(persistConfig, authSlice.reducer),
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
